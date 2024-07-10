@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+:root{
+    --gray: #ECECE8; 
+    --yellow: #FCC822;
+    --dark-gray: #45423b;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "roboto",sans-serif;
+}
+
+.main{
+    display: flex;
+}
+
+.left{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo > img{
+    width: 255px;
+}
+
+.margin-bottom{
+    margin-bottom: 32px;
+}
+
+.para{
+    line-height: 5px;
+}
+
+.width{
+    width: 50%;
+    height: 100vh;
+}
+
+.no-border{
+    border-top: none;
+    border-right: none;
+    border-left: none;
+} 
+
+.border{
+    width: 350px;
+    border: 2px solid var(--gray);
+    padding: 5px 10px;
+}
+.border p{
+    margin: 2px;
+}
+p{
+    font-size: 12px; 
+    color: var(--dark-gray)
+}
+
+input{
+    width: 100%; 
+    outline: 0;
+    height: 30px;
+    color: var(--yellow);
+    border-bottom: 2px solid var(--dark-gray);
+}
+
+.no-border-bottom{
+    border-bottom: none;
+}
+
+.btns{
+    display: flex;
+    justify-content: space-between;
+}
+
+.login-btn > button{
+    width: 100px;
+    height: 40px;
+    border-color: var(--yellow);
+    background-color: white;
+    color: var(--yellow);
+}
+
+.login-btn > button:hover{
+    border-color: var(--yellow);
+    background-color: var(--yellow);
+    color: white;
+}
+
+.signup-btn > button{
+    width: 100px;
+    height: 40px;
+    border-color: var(--yellow);
+    background-color: white;
+    color: var(--yellow);
+}
+
+.signup-btn > button:hover{
+    border-color: var(--yellow);
+    background-color: var(--yellow);
+    color: white;
+}
+
+.right{
+    width: 400px;
+    background-color: var(--gray);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media screen and (max-width: 600px){
+    .right{
+        display: none;
+    }
+    .main{
+        justify-content: center;
+        align-items: center;
+    }
+}
+
