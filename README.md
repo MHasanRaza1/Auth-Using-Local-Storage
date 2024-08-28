@@ -8,7 +8,7 @@ This project implements authentication using Local Storage, providing a secure a
 ## Overview 🌟
 This project demonstrates a complete authentication flow, including user sign-up, login, dashboard access, and logout with proper redirection. The process begins with user registration, followed by login, and access to a protected dashboard. Upon logout, users are securely redirected to the login page.
 
-<b>Project Link.</b>[QuizGrad]() 
+<b>Project Link.</b>[QuizGrad](https://auth-using-local-storage.vercel.app/) 
 
 ## Technologies Used 💻
 - HTML
