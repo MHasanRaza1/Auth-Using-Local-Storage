@@ -50,7 +50,7 @@
 .border{
     width: 350px;
     border: 2px solid var(--gray);
-    padding: 0px 10px;
+    padding: 10px 10px;
 }
 .border p{
     margin: 2px;

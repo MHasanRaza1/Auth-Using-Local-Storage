@@ -10,7 +10,7 @@ function loginAlready(){
         return user.isLogin === true;
     })
     if(userLogin){
-        window.location.href = "../dashboard/dashboard.html";
+        window.location.href = "../Dashboard/dashboard.html";
     }
 }
 loginAlready();
@@ -42,7 +42,7 @@ const signUp = () => {
                 button: "Aww yiss!",
               });
             setTimeout(() => {
-                window.location.href = "../login/login.html";
+                window.location.href = "../Login/login.html";
             },3000)
         }
     }

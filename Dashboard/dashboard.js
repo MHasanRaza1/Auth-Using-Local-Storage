@@ -9,7 +9,7 @@ let findLogin = data.find((user) => {
 
 function redirectLogin(){
     if(!findLogin){
-        window.location.href = '../login/login.html';
+        window.location.href = '../Login/login.html';
     }
 }
 
@@ -32,7 +32,7 @@ const logout = () => {
         button: "Aww yiss!",
       });
     setTimeout(() => {
-        window.location.href = "../login/login.html";
+        window.location.href = "../Login/login.html";
     },3000)
 }
 

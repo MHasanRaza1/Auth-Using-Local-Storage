@@ -6,7 +6,7 @@ let findLogin = data.find((user) => {
 
 function redirectLogin(){
     if(findLogin){
-        window.location.href = '../dashboard/dashboard.html';
+        window.location.href = '../Dashboard/dashboard.html';
     }
 }
 redirectLogin();

@@ -9,7 +9,7 @@ let findLogin = data.find((user) => {
 
 function redirectLogin(){
     if(findLogin){
-        window.location.href = '../dashboard/dashboard.html';
+        window.location.href = '../Dashboard/dashboard.html';
     }
 }
 redirectLogin();
@@ -31,7 +31,7 @@ const login = () => {
                     button: "Aww yiss!",
                   });
                 setTimeout(() => {
-                    window.location.href = "../dashboard/dashboard.html";
+                    window.location.href = "../Dashboard/dashboard.html";
                 },3000)
             }
             else{
