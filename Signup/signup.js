@@ -1,55 +1,62 @@
-let form = document.querySelectorAll("form input");
-const [userEmail, userName, userPassword, userPic] = form;
-// console.log(userEmail, userName, userPassword, userPic);
+let formFields = document.querySelectorAll('form input');
+let [userEmail, userName, userPassword, userImg] = formFields;
+let error = document.getElementById('error');
+let usersArr = JSON.parse(localStorage.getItem("userData")) || [];
+userImg.value = ''
 let imgUrl;
-let emailReg = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-let passwordReg = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
-let error = document.getElementById("error");
 
-const regexChecker = () => {
-    event.preventDefault();
-    if(emailReg.test(userEmail.value) && (passwordReg.test(userPassword.value))){
-        signup();
-    }
-    else{
-        error.innerHTML =  `<p id="regex">Email and Password must follow the standard!<p>`;
-        document.getElementById('regex').style.color = 'red'; 
+function loginAlready(){
+    let userLogin = usersArr.find((user) => {
+        return user.isLogin === true;
+    })
+    if(userLogin){
+        window.location.href = "../dashboard/dashboard.html";
     }
 }
+loginAlready();
 
-const signup = () => {
-    // event.preventDefault();
-    if(userEmail.value != "" && userName.value != "" && userPassword.value != ""){
-        let obj = {
-            signupEmail: userEmail.value,
-            user: userName.value,
-            signupPassword: userPassword.value,
-            userProfile: imgUrl,
+const signUp = () => {
+    event.preventDefault();
+    if(userEmail.value.trim() !== "" && userName.value.trim() !== '' && userPassword.value.trim() !== ''){
+        let alreadyAccount = usersArr.find((user) => {
+            return user.email === userEmail.value;
+        })
+        if(alreadyAccount){
+            error.innerHTML = `<p id="error-text">Account is already registered on this email</p>`;
+            document.getElementById('error-text').style.color = 'red';
         }
-        swal({
-            title: "You are successfully SignUp",
-            text: "You clicked the button!",
-            icon: "success",
-            button: "Aww yiss!",
-        });
-        localStorage.setItem("userDetails",JSON.stringify(obj));
-        setTimeout(() => {
-            window.location.href = "../Login/login.html";
-        },2000)
+        else{
+            error.innerHTML = ""
+            let obj = {
+                email: userEmail.value,
+                password: userPassword.value,
+                name: userName.value,
+                userImg: imgUrl,
+                isLogin: false
+            }
+            usersArr.push(obj);
+            localStorage.setItem("userData",JSON.stringify(usersArr));
+            swal({
+                title: "SignUp Successfully",
+                icon: "success",
+                button: "Aww yiss!",
+              });
+            setTimeout(() => {
+                window.location.href = "../login/login.html";
+            },3000)
+        }
     }
     else{
-        error.innerHTML =  '<p id="empty">Enter Email and Password first.</p>';
-        document.getElementById('empty').style.color = 'red'; 
+        error.innerHTML = `<p id="error-text">Please Enter your Details</p>`;
+        document.getElementById('error-text').style.color = 'red';
     }
 }
 
 const uploadImage = () => {
-    let img = userPic.files[0];
+    let img = userImg.files[0];
     let fileRead = new FileReader();
     fileRead.onload = () => {
         imgUrl = fileRead.result;
-        console.log('imgUrl',imgUrl)
     }
-    fileRead.readAsDataURL(img)
-    console.log('64URL',fileRead.readAsDataURL(img))
+    fileRead.readAsDataURL(img);
 }

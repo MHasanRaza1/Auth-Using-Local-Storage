@@ -13,22 +13,22 @@
     <div class="main">
         <div class="left width">
             <div class="logo margin-bottom">
-                <img src="../Assets/Logo.png" alt="Logo">
+                <img src="../assets/images/logo.png" alt="Logo">
             </div>
             <div class="para margin-bottom">
                 <p style="text-align: center; font-size: 16px;">Welcome!</p>
                 <p style="font-size: 16px;">Please SignUp to your account.</p>
             </div>
             <div class="form">
-                <form onsubmit="regexChecker();">
+                <form onsubmit="signUp();">
                     <div class="margin-bottom">
                         <div class="email border">
                             <p>Email Address</p>
-                            <input type="email" name="email" class="no-border" required>
+                            <input type="text" name="email" class="no-border" required>
                         </div>
                         <div class="username border">
                             <p>Username</p>
-                            <input type="text" name="text" class="no-border" required>
+                            <input type="text" name="user-name" class="no-border" required>
                         </div>
                         <div class="password border">
                             <p>Password</p>
@@ -43,12 +43,15 @@
                     <div class="signup-btn">
                         <button type="submit">SignUp</button>
                     </div>
+                    <div class="have-account">
+                        <p>Already have an account? <a href="../login/login.html">Login</a></p>
+                    </div>
                 </form>
             </div>
         </div>
         <div class="right" style="width: 50%;">
             <div class="hat-img">
-                <img src="../Assets/Hands Graduate.png" alt="Hand Graduate">
+                <img src="../assets/images/hat.png" alt="Hand Graduate">
             </div>
         </div>
     </div>

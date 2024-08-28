@@ -28,7 +28,7 @@
 }
 
 .margin-bottom{
-    margin-bottom: 32px;
+    margin-bottom: 20px;
 }
 
 .para{
@@ -71,18 +71,28 @@ input{
     border-bottom: none;
 }
 
-.signup-btn > button{
-    width: 100px;
+.signup-btn button{
+    width: 100%;
     height: 40px;
     border-color: var(--yellow);
     background-color: white;
     color: var(--yellow);
+    margin-bottom: 20px;
 }
 
-.signup-btn > button:hover{
+.signup-btn button:hover{
     border-color: var(--yellow);
     background-color: var(--yellow);
     color: white;
+}
+
+.have-account p{
+    font-size: 1rem;
+}
+
+.have-account p a{
+    text-decoration: none;
+    font-weight: 600;
 }
 
 .right{
